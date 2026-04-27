@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+interface BlogPost {
+  title: string;
+  summary?: string;
+  content?: string;
+  tags: string[];
+  createdAt: string;
+}
+
 const Blog: React.FC = () => {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/blogs')

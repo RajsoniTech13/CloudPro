@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+interface TutorialData {
+  title: string;
+  links: {
+    title: string;
+    url: string;
+  }[];
+}
+
 const AWSPage: React.FC = () => {
-  const [tutorials, setTutorials] = useState<any>(null);
+  const [tutorials, setTutorials] = useState<TutorialData | null>(null);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/aws/tutorials')
@@ -90,7 +98,7 @@ const AWSPage: React.FC = () => {
         <section className="mt-12 pt-6 border-t border-gray-200">
           <h3 className="text-xl font-bold text-gray-800 mb-4">Official Documentation & Tutorials</h3>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
-            {tutorials.links.map((t: any, i: number) => (
+            {tutorials.links.map((t: { title: string; url: string }, i: number) => (
               <li key={i}>
                 <a 
                   href={t.url} 
