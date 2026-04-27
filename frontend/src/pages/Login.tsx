@@ -23,7 +23,7 @@ const Login: React.FC = () => {
       } else {
         setError(data.message || 'Login failed');
       }
-    } catch (err) {
+    } catch {
       setError('Server error');
     }
   };

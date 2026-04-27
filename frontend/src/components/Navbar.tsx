@@ -15,7 +15,6 @@ const Navbar: React.FC = () => {
     <nav className="bg-gfg-green text-white px-6 py-3 flex items-center justify-between sticky top-0 z-50 shadow-md">
       <div className="flex items-center gap-6">
         <Link to="/" className="text-2xl font-bold tracking-wide flex items-center">
-          <span className="bg-white text-gfg-green px-2 py-1 rounded mr-2">GFG</span>
           CloudPro
         </Link>
         <div className="hidden md:flex gap-4 font-medium text-sm">

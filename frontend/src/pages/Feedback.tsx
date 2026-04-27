@@ -40,7 +40,7 @@ const Feedback: React.FC = () => {
       } else {
         setStatus(d.message || 'Error occurred');
       }
-    } catch (err) {
+    } catch {
       setStatus('Error submitting feedback');
     }
   };

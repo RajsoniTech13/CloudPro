@@ -24,7 +24,7 @@ const Register: React.FC = () => {
       } else {
         setError(data.message || 'Registration failed');
       }
-    } catch (err) {
+    } catch {
       setError('Server error');
     }
   };
