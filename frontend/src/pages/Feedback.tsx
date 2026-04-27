@@ -20,7 +20,18 @@ const Feedback: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchFeedbacks();
+    const fetchData = async () => {
+      try {
+        const res = await fetch('http://localhost:8080/api/feedback');
+        if (res.ok) {
+          const data = await res.json();
+          setRecentFeedbacks(data);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    fetchData();
   }, []);
 
   const submit = async (e: React.FormEvent) => {
