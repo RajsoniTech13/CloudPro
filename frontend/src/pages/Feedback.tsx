@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
+interface FeedbackItem {
+  name?: string;
+  email?: string;
+  message: string;
+  createdAt: string;
+}
+
 const Feedback: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
-  const [recentFeedbacks, setRecentFeedbacks] = useState<any[]>([]);
+  const [recentFeedbacks, setRecentFeedbacks] = useState<FeedbackItem[]>([]);
 
   const fetchFeedbacks = async () => {
     try {
